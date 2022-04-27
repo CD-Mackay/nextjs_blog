@@ -1,5 +1,6 @@
-import navigation from "./navigation";
+import Navigation from "./navigation";
 import { Fragment } from "react";
+import Logo from "./logo";
 
 export default function Layout(props) {
   return (
