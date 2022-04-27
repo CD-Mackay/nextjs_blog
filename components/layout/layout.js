@@ -1,5 +1,5 @@
-import navigation from './navigation';
-import { Fragment } from 'react';
+import navigation from "./navigation";
+import { Fragment } from "react";
 
 export default function Layout(props) {
   return (
@@ -7,5 +7,5 @@ export default function Layout(props) {
       <Navigation />
       <main>{props.children}</main>
     </Fragment>
-  )
+  );
 }
