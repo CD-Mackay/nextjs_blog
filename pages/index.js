@@ -1,9 +1,11 @@
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
+import { Fragment } from "react";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <h1>Hello Next World!</h1>
-    </div>
-  )
+    <Fragment>
+      <Hero />
+      <FeaturedPosts />
+    </Fragment>
+  );
 }
