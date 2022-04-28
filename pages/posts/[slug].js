@@ -1,5 +1,7 @@
+import PostContent from "../../components/posts/post-detail/postContent";
+
 export default function SingleBlog() {
   return (
-    <p> I am A SingleBlog</p>
+    <PostContent />
   )
 };
