@@ -3,21 +3,15 @@ import classes from "./postContent.module.css";
 import ReactMarkdown from 'react-markdown';
 // const  ReactMarkdown  = require('react-markdown');
 
-export default function PostContent() {
-  const dummy_post = {
-    title: "A Crickets Tale",
-    image: "ongo-gablogian.jpg",
-    date: "2021-03-03",
-    slug: "a-crickets-tale",
-    content: "# This is the tale of Cricket",
-  };
+export default function PostContent({post}) {
 
-  const imagePath = `/images/${dummy_post.image}`;
+
+  const imagePath = `/images/${post.image}`;
 
   return (
     <article className={classes.content}>
-      <PostHeader title={dummy_post.title} image={imagePath} />
-      <ReactMarkdown>{dummy_post.content}</ReactMarkdown>
+      <PostHeader title={post.title} image={imagePath} />
+      <ReactMarkdown>{post.content}</ReactMarkdown>
     </article>
   );
 }
