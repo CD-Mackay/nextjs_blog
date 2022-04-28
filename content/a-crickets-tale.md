@@ -16,7 +16,7 @@ Here is a link to [link](https://www.google.ca). Some call this regular text
 
 ## This is the Sordid Tale of Rickety Cricket
 
-![this is not a picture of him](/images/a-crickets-tale/ongo-gablogian.jpg)
+![this is not a picture of him](ongo-gablogian.jpg)
 
 ## How did he get this way?
 
