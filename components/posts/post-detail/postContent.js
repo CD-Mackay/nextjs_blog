@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown';
 export default function PostContent({post}) {
 
 
-  const imagePath = `/images/${post.image}`;
+  const imagePath = `/images/${post.slug}/${post.image}`;
 
   return (
     <article className={classes.content}>
