@@ -4,7 +4,7 @@ import matter from "gray-matter";
 
 const postsPath = path.join(process.cwd(), "content");
 
-function getAllPosts() {
+export function getAllPosts() {
   const postFiles = fs.readdirSync(postsPath);
   const allPosts = postFiles.map((postFile) => {
     return getSinglePost(postFile);
@@ -29,7 +29,7 @@ function getSinglePost(fileName) {
   return postData;
 }
 
-function getFeaturedPosts() {
+export function getFeaturedPosts() {
   const allPosts = getAllPosts();
   const featuredPosts = allPosts.filter((post) => post.isFeatured);
 
