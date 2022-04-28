@@ -11,7 +11,7 @@ export default function PostItem(props) {
     year: 'numeric'
   });
 
-  const imagePath=`/images/${image}`
+  const imagePath=`/images/${slug}/${image}`;
   return (
     <li className={classes.post}>
       <Link href={`/posts/${slug}`}>
