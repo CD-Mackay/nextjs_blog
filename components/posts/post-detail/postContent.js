@@ -1,4 +1,5 @@
 import PostHeader from "./postHeader";
+import classes from './postContent.module.css';
 
 export default function PostContent() {
 
@@ -11,10 +12,10 @@ export default function PostContent() {
       content: "# This is the tale of Cricket"
     };
 
-    const imagePath = `/images/posts/${dummy_post.image}`
+    const imagePath = `/images/${dummy_post.image}`
   
 return (
-  <article>
+  <article className={classes.content}>
     <PostHeader title={dummy_post.title} image={imagePath} />
     {dummy_post.content}
   </article>
