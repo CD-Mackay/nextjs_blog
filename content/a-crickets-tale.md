@@ -2,7 +2,7 @@
 title: 'A Crickets Tale'
 date: '2022-10-10'
 image: 'ongo-gablogian.jpg'
-excerpt: 'The tale of Cricket'
+excerpt: 'The tale of Rickety Cricket'
 isFeatured: true
 
 ---
