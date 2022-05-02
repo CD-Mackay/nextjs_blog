@@ -1,10 +1,20 @@
 import PostContent from "../../components/posts/post-detail/postContent";
 import { getSinglePost, getPostsFiles } from "../../helpers/posts-util";
+import Head from "next/head";
+import { Fragment } from "react";
 
 export default function SingleBlog(props) {
   const { post } = props;
 
-  return <PostContent post={post} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>{props.post.title}</title>
+        <meta name="description" content={props.post.excerpt} />
+      </Head>
+      <PostContent post={post} />
+    </Fragment>
+  );
 }
 
 export function getStaticProps(context) {
