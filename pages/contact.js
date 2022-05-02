@@ -1,5 +1,7 @@
+import ContactForm from "../components/contact/contactForm"
+
 export default function Contact() {
   return (
-    <p>I am Contact</p>
+    <ContactForm /> 
   )
 };

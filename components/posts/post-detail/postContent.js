@@ -41,11 +41,10 @@ export default function PostContent({ post }) {
 
     code(code) {
       const { className, children } = code;
-      console.log(className);
       return (
         <SyntaxHighlighter
           language={className}
-          children={children}
+          children={children} 
           style={atomDark}
         />
       );
