@@ -11,11 +11,14 @@ export default function ContactForm() {
 
     fetch("/api/contact", {
       method: "POST",
-      body: {
-        email: enteredEmail,
+      body: JSON.stringify({
         name: enteredName,
+        email: enteredEmail,
         message: enteredMessage
-      },
+      }),
+      headers : {
+        'Content-Type': 'application/json'
+      }
     });
   }
 
@@ -51,8 +54,7 @@ export default function ContactForm() {
             id="message"
             rows="5"
             value={enteredMessage}
-            onChange={(event) => setEnteredMessage(event.target.value)}
-          />
+            onChange={(event) => setEnteredMessage(event.target.value)}></textarea>
         </div>
         <div className={classes.actions}>
           <button>Send Message</button>
