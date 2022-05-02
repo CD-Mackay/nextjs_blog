@@ -1,10 +1,12 @@
 import classes from "./contactForm.module.css";
 import { useState } from "react";
+import Notification from '../ui/notification';
 
 export default function ContactForm() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredName, setEnteredName] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -60,6 +62,7 @@ export default function ContactForm() {
           <button>Send Message</button>
         </div>
       </form>
+      <Notification />
     </section>
   );
 }
