@@ -2,22 +2,25 @@ import PostHeader from "./postHeader";
 import classes from "./postContent.module.css";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
 // const  ReactMarkdown  = require('react-markdown');
 
 export default function PostContent({ post }) {
   const imagePath = `/images/${post.slug}/${post.image}`;
 
   const customRenderers = {
-    // image(image) {
-    //   return (
-    //     <Image
-    //       src={`/images/${post.slug}/${image.src}`}
-    //       alt={image.alt}
-    //       width={600}
-    //       height={300}
-    //     />
-    //   );
-    // },
+    image(image) {
+      return (
+        <Image
+          src={`/images/${post.slug}/${image.src}`}
+          alt={image.alt}
+          width={600}
+          height={300}
+        />
+      );
+    },
     paragraph(paragraph) {
       const { node } = paragraph;
       if (node.children[0].type === "image") {
@@ -32,8 +35,20 @@ export default function PostContent({ post }) {
             />
           </div>
         );
-      } 
-      return <p>{paragraph.children}</p>
+      }
+      return <p>{paragraph.children}</p>;
+    },
+
+    code(code) {
+      const { className, children } = code;
+      console.log(className);
+      return (
+        <SyntaxHighlighter
+          language={className}
+          children={children}
+          style={atomDark}
+        />
+      );
     },
   };
 
