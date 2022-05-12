@@ -21,11 +21,11 @@ async function handler(req, res) {
       message,
     };
 
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_cluster}.jdoeb.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     let client;
     try {
-      client = await MongoClient.connect(
-        "mongodb+srv://ConnorTwo:ConnorPass@authcluster.jdoeb.mongodb.net/contact-messages?retryWrites=true&w=majority"
-      );
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -33,20 +33,16 @@ async function handler(req, res) {
     const db = client.db();
     let result;
     try {
-      result = await db.collection('messages').insertOne(newMessage);
+      result = await db.collection("messages").insertOne(newMessage);
       newMessage.id = result.insertedId;
-
-    } catch(error) {
+    } catch (error) {
       client.close();
       res.status(500).json({ message: error.message });
       return;
-    };
+    }
 
     client.close();
-    res.status(201).json({message: "success", message: newMessage});
-
-
-
+    res.status(201).json({ message: "success", message: newMessage });
 
     res
       .status(201)
