@@ -1,7 +1,7 @@
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
 module.exports = (phase) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER) {
+  // if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
         mongodb_username: "ConnorTwo",
@@ -9,6 +9,6 @@ module.exports = (phase) => {
         mongodb_cluster: "authcluster",
         mongobd_database: "contact-messages",
       },
-    };
+    // };
   }
 };
