@@ -42,8 +42,6 @@ async function handler(req, res) {
     }
 
     client.close();
-    res.status(201).json({ message: "success", message: newMessage });
-
     res
       .status(201)
       .json({ message: "sweeet sweet backend success", message: newMessage });
